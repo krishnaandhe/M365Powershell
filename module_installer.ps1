@@ -45,7 +45,7 @@ switch ($opt)
 
         Get-InstalledModule | Select Name,Version,UpdatedDate
 
-        Install-Module -Name PowerShellGet -Force -AllowClobber
+        #Install-Module -Name PowerShellGet -Force -AllowClobber
               
         $Loop = $true
         Exit
