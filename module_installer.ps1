@@ -48,7 +48,7 @@ switch ($opt)
 
         #Install-Module -Name PowerShellGet -Force -AllowClobber
               
-        $Loop = $true
+        #$Loop = $true
         Exit
         #———— End of Indication ———————
   
@@ -72,7 +72,7 @@ switch ($opt)
             Install-Module -Name AzureAD
          }
 
-    $Loop = $true
+    #$Loop = $true
     Exit
     #———— End of Indication ———————
 
@@ -96,7 +96,7 @@ if (Get-Module -ListAvailable -Name ExchangeOnlineManagement)
             Install-Module -Name ExchangeOnlineManagement
          }
 
-    $Loop = $true
+    #$Loop = $true
     Exit
     #———— End of Indication ———————
 }
@@ -119,7 +119,7 @@ if (Get-Module -ListAvailable -Name MSOnline)
             Install-Module -Name MSOnline
          }
 
-    $Loop = $true
+    #$Loop = $true
     Exit
     #———— End of Indication ———————
 	
@@ -145,7 +145,7 @@ if (Get-Module -ListAvailable -Name Microsoft.Online.SharePoint.PowerShell)
             Install-Module -Name Microsoft.Online.SharePoint.PowerShell
          }
 
-    $Loop = $true
+    #$Loop = $true
     Exit
     #———— End of Indication ———————
 
@@ -170,7 +170,7 @@ if (Get-Module -ListAvailable -Name MicrosoftTeams)
             Install-Module -Name MicrosoftTeams
          }
 
-    $Loop = $true
+    #$Loop = $true
     Exit
     #———— End of Indication ———————
 
@@ -195,7 +195,7 @@ if (Get-Module -ListAvailable -Name PartnerCenter)
             Install-Module -Name PartnerCenter
          }
 
-    $Loop = $true
+    #$Loop = $true
     Exit
     #———— End of Indication ———————
 
@@ -205,7 +205,7 @@ if (Get-Module -ListAvailable -Name PartnerCenter)
 
 Exit
 
-    $Loop = $true
+    #$Loop = $true
     Exit
     #———— End of Indication ———————
 
