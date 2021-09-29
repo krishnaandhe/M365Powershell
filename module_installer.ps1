@@ -25,8 +25,9 @@ write-host "6)  Microsoft Teams Module" -ForegroundColor Yellow
 write-host
 write-host "7)  Microsoft PartnerCenter Module" -ForegroundColor Yellow
 write-host
+write-host "8)  Exit" -ForegroundColor Red
 write-host
-$opt = Read-Host "Select an option [1-7]"
+$opt = Read-Host "Select an option [1-8]"
 write-host $opt
 switch ($opt) 
 
@@ -193,6 +194,16 @@ if (Get-Module -ListAvailable -Name PartnerCenter)
         
             Install-Module -Name PartnerCenter
          }
+
+    $Loop = $true
+    Exit
+    #———— End of Indication ———————
+
+}
+8{
+
+
+Exit
 
     $Loop = $true
     Exit
