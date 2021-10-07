@@ -25,9 +25,8 @@ write-host "6)  Microsoft Teams Module" -ForegroundColor Yellow
 write-host
 write-host "7)  Microsoft PartnerCenter Module" -ForegroundColor Yellow
 write-host
-write-host "8)  Exit" -ForegroundColor Red
 write-host
-$opt = Read-Host "Select an option [1-8]"
+$opt = Read-Host "Select an option [1-7]"
 write-host $opt
 switch ($opt) 
 
@@ -44,11 +43,13 @@ switch ($opt)
 
         #——– office 365 Cmdlets  ———–
 
+        Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+
         Get-InstalledModule | Select Name,Version,UpdatedDate
 
-        #Install-Module -Name PowerShellGet -Force -AllowClobber
+        Install-Module -Name PowerShellGet -Force -AllowClobber
               
-        #$Loop = $true
+        $Loop = $true
         Exit
         #———— End of Indication ———————
   
@@ -72,7 +73,7 @@ switch ($opt)
             Install-Module -Name AzureAD
          }
 
-    #$Loop = $true
+    $Loop = $true
     Exit
     #———— End of Indication ———————
 
@@ -96,8 +97,7 @@ if (Get-Module -ListAvailable -Name ExchangeOnlineManagement)
             Install-Module -Name ExchangeOnlineManagement
          }
 
-    #$Loop = $true
-    Exit
+   
     #———— End of Indication ———————
 }
 
@@ -119,8 +119,7 @@ if (Get-Module -ListAvailable -Name MSOnline)
             Install-Module -Name MSOnline
          }
 
-    #$Loop = $true
-    Exit
+   
     #———— End of Indication ———————
 	
 
@@ -145,8 +144,7 @@ if (Get-Module -ListAvailable -Name Microsoft.Online.SharePoint.PowerShell)
             Install-Module -Name Microsoft.Online.SharePoint.PowerShell
          }
 
-    #$Loop = $true
-    Exit
+    
     #———— End of Indication ———————
 
 }
@@ -158,7 +156,7 @@ if (Get-Module -ListAvailable -Name MicrosoftTeams)
         {
             Write-Host "Module exists, Hence Updating the Existing Module"
 
-            Update-Module -Name MicrosoftTeams
+            Update-Module -Name MicrosoftTeams -Force -AllowPrerelease
 
          }
 
@@ -167,11 +165,10 @@ if (Get-Module -ListAvailable -Name MicrosoftTeams)
     {
             Write-Host "Module does not exists, Hence Installing Module"
         
-            Install-Module -Name MicrosoftTeams
+            Install-Module -Name MicrosoftTeams -Force -AllowClobber -AllowPrerelease
          }
 
-    #$Loop = $true
-    Exit
+    
     #———— End of Indication ———————
 
 }
@@ -195,17 +192,7 @@ if (Get-Module -ListAvailable -Name PartnerCenter)
             Install-Module -Name PartnerCenter
          }
 
-    #$Loop = $true
-    Exit
-    #———— End of Indication ———————
-
-}
-8{
-
-
-Exit
-
-    #$Loop = $true
+    $Loop = $true
     Exit
     #———— End of Indication ———————
 
