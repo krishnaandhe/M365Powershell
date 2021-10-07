@@ -73,8 +73,8 @@ switch ($opt)
             Install-Module -Name AzureAD
          }
 
-    $Loop = $true
-    Exit
+    #$Loop = $true
+    #Exit
     #———— End of Indication ———————
 
 }
