@@ -49,8 +49,8 @@ switch ($opt)
 
         Install-Module -Name PowerShellGet -Force -AllowClobber
               
-        $Loop = $true
-        Exit
+        #$Loop = $true
+        #Exit
         #———— End of Indication ———————
   
 }
