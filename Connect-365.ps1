@@ -214,22 +214,18 @@ Function Connect-AAD{
     }
     Else {
       Connect-AzureAD -Credential $Credential
+      Connect-AzAccount -Credential $credential
     }
 }
 
 Function Connect-Com{
-    If ($UseMFA) {
-      $CCSession = New-EXOPSSession -ConnectionUri https://ps.compliance.protection.outlook.com/powershell-liveid/ -UserPrincipalName $UserName
+ If ($UseMFA) {
+      Connect-IPPSSession -UserPrincipalName $UserName
     }
     Else {
-      $CCSession = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://ps.compliance.protection.outlook.com/powershell-liveid/ -Credential $Credential -Authentication Basic -AllowRedirection
+      Connect-IPPSSession -Credential $Credential
     }
-    If ($Clob) {
-      Import-PSSession $CCSession -AllowClobber
-    }
-    Else {
-      Import-PSSession $CCSession
-    }
+    
 }
 
 Function Connect-SfB{
@@ -269,10 +265,10 @@ Function Connect-Teams{
 
 Function Connect-Intune{
     If ($UseMFA) {
-      Connect-MSGraph
+      Connect-MSGraph -AdminConsent
     }
     Else {
-      Connect-MSGraph -PSCredential $Credential
+      Connect-MSGraph -AdminConsent
     }
 }
 
