@@ -1,5 +1,4 @@
-<#Connect-365.ps1
-#>
+<# Connect-365 Services #>
 $ErrorActionPreference = "Stop"
 $ScriptVersion = "1.1.1"
 #region XAML code
