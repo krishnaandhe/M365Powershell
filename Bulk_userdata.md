@@ -3,7 +3,9 @@
 Reference:- (https://community.spiceworks.com/how_to/132771-bulk-update-user-data-fields-in-the-office-365-exchange-global-address-list)
 
 ⚡⚡This command will put a CSV file on your hard drive containing all the data fields in your GAL for all your users.⚡⚡
-👉 You can modify the path and filename at the end of the command as appropriate for your needs, To use script click on Code to use 👆
+👉 You can modify the path and filename at the end of the command as appropriate for your needs,
+
+To use script click on Code to use 👆
 
 
 get-user -resultsize unlimited |select * |export-csv c:\scripts\Raw_users.csv
